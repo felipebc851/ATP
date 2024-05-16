@@ -1,0 +1,21 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // solcita que o usuário informe um simbolo
+        Console.Write("Digite um símbolo: ");
+        char simbolo = Console.ReadKey().KeyChar; // le um único caractere do teclado
+        Console.WriteLine(); // pula uma linha
+
+        // identifica o símbolo e exibe a mensagem 
+        Console.WriteLine(simbolo switch
+        {
+            '<' => "SINAL DE MENOR",
+            '>' => "SINAL DE MAIOR",
+            '=' => "SINAL DE IGUAL",
+            _ => "OUTRO SINAL"
+        });
+    }
+}
