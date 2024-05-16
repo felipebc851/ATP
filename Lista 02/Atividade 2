@@ -1,0 +1,44 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {    
+        // O bloco try irá tentar executar o código dentro dele, caso não ocorra exceções
+        try
+        {
+            // Solicita que o usuário insira dois números inteiros
+            Console.Write("Digite o primeiro número inteiro: ");
+            int numero1 = int.Parse(Console.ReadLine());
+
+            Console.Write("Digite o segundo número inteiro: ");
+            int numero2 = int.Parse(Console.ReadLine());
+
+            // Calcula a soma dos números
+            int soma = numero1 + numero2;
+
+            // Verifica se a soma é maior ou igual a 10  
+            if (soma >= 10)
+            {
+                soma += 5; // Se for maior ou igual a 10 vai somar 5
+            }
+            else
+            {
+                soma += 7; // Caso contrário irá somar 7
+            }
+
+            // Imprime o resultado final
+            Console.WriteLine("O resultado final é: " + soma);
+
+        } 
+        // Ambos os blocos catch irão tratar as exceções que podem ocorrer
+        catch (FormatException) 
+        {
+            Console.WriteLine("Por favor, insira apenas números inteiros.");
+        }
+        catch (OverflowException)
+        {
+            Console.WriteLine("O número inserido é muito grande ou muito pequeno para ser representado como um número inteiro.");
+        }
+    }
+}
