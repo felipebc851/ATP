@@ -1,0 +1,34 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.Write("Velocidade máxima permitida (km/h): ");
+        int velocidadeMaxima = int.Parse(Console.ReadLine());
+
+        Console.Write("Velocidade do motorista (km/h): ");
+        int velocidadeMotorista = int.Parse(Console.ReadLine());
+        // calcula a diferença entre a velocidade do motorista e a velocidade máxima permitida
+        int diferencaVelocidade = velocidadeMotorista - velocidadeMaxima;
+        int valorMulta = 0;
+        // verifica se o motorista ultrapassou a velocidade máxima permitida com if e else/ else if 
+        if (diferencaVelocidade > 0)
+        {
+            if (diferencaVelocidade <= 10)
+                valorMulta = 50;
+            else if (diferencaVelocidade <= 30)
+                valorMulta = 100;
+            else
+                valorMulta = 200;
+
+            // exiibe a mensagem de multa e um sermão para o motorista kkk
+            Console.WriteLine($"Ultrapassou a velocidade permitida. Tome-lhe multa!: R${valorMulta}");
+            Console.WriteLine("Dirija com prudência e respeite os limites de velocidade para garantir a segurança de todos.");
+        }
+        else
+        {
+            Console.WriteLine("Motorista com bom senso :D.");
+        }
+    }
+}
