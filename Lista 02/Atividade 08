@@ -1,0 +1,39 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // solicita que o usuário informe a opcao A, B, C
+        Console.WriteLine("Opções disponíveis:");
+        Console.WriteLine("A - Aumento de 8% no salário");
+        Console.WriteLine("B - Aumento de 11% no salário");
+        Console.WriteLine("C - Aumento fixo no salário (R$ 350,00 se o salário atual for até R$ 1000 e R$ 200,00 se o salário atual for maior que R$ 1000)");
+        Console.Write("Informe a opção desejada: ");
+        char opcao = char.ToUpper(Console.ReadLine()[0]);
+
+
+        Console.Write("Informe o salário atual do colaborador: ");
+        double salarioAtual = double.Parse(Console.ReadLine());
+
+        // calcula o novo salário de acordo con a opção escolhida
+        double novoSalario;
+        switch (opcao)
+        {
+            case 'A':
+                novoSalario = salarioAtual * 1.08;
+                break;
+            case 'B':
+                novoSalario = salarioAtual * 1.11;
+                break;
+            case 'C':
+                novoSalario = salarioAtual + (salarioAtual <= 1000 ? 350.0 : 200.0);
+                break;
+            default:
+                Console.WriteLine("ESSA OPÇÃO NÃO CONSTA NO SISTEMA.");
+                return;
+        }
+
+        // exiibe o novo salário
+        Console.WriteLine("O novo salário é: " + novoSalario.ToString("C"));
+    }
