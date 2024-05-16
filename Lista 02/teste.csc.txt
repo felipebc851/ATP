@@ -1,1 +1,29 @@
-tffgrf
+tffgrfusing System;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+     //codigo para digitar os números// 
+        Console.WriteLine("DIGITE UM NÚMER0");
+        int n = int.Parse(Console.ReadLine());
+        Console.WriteLine("DIGITE OUTRO NÚMERO");
+        int n2 = int.Parse(Console.ReadLine());
+        int maior; 
+      //comparação do número maior// 
+        if (n > n2)
+
+        {
+            maior = n; 
+        }
+        else
+        {
+            maior = n2;
+
+        }
+      //rresultado do if e else// 
+         Console.WriteLine("Maior Número é" + maior);
+         Console.ReadKey();
+
+      }
+  }
