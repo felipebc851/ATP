@@ -1,0 +1,43 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // pergunta para a pessoa o ano de nascimento
+        Console.Write("data de nascimento (ano) : ");
+        int anoNascimento = int.Parse(Console.ReadLine());
+
+        // pergunta se ela já fez aniversário neste ano com o uso de bool pra true/false
+        Console.Write("já fez aniversário? (SIM/NÃO): ");
+        string fezAniversarioStr = Console.ReadLine().ToUpper(); 
+        bool fezAniversario = fezAniversarioStr == "SIM";
+
+        // obtem o ano atual diretamente do sistema de relógio do pc 
+        // pesquisei um pouco para facilitar no cálculo de idade utilizando o DateTime
+        // no caso pegando do sistema do pc
+        int anoAtual = DateTime.Now.Year;
+
+        int idade = anoAtual - anoNascimento;
+
+        // veriifica se a pessoa já fez aniversário neste ano
+        if (!fezAniversario)
+        {
+            // se ainda não fez aniversári tira um ano da idade
+            idade--;
+        }
+
+        // idade da pessoa:
+        Console.WriteLine("Sua idade é: " + idade);
+
+        // verifica se a pessoa tem 18 anos ou mais para tirar a CNH com if e else 
+        if (idade >= 18)
+        {
+            Console.WriteLine("Você pode tirar a CNH. UHUUUUUUUUUUUL!");
+        }
+        else
+        {
+            Console.WriteLine("Senta lá que você ainda não pode tirar CNH! HAHAHAHAHAAH.");
+        }
+    }
+}
