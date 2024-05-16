@@ -1,0 +1,31 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("BORA RESOLVER UMA EQUAÇÃAAO DE PRIMEIRO GRAU! :D (ax + b = 0)");
+
+        Console.Write("Digite o valor de A : ");
+        double a = double.Parse(Console.ReadLine());
+
+        Console.Write("Digite o valor de B : ");
+        double b = double.Parse(Console.ReadLine());
+
+        // verifica se com if e else 'a' é diferente de zero para garantir se é válido 
+        if (a != 0)
+        {
+            // calcula a raiz da equação usando a fórmula -b/a
+            double raiz = -b / a;
+
+            // moostra a raiz da equação para a pessoa
+            Console.WriteLine("A raiz da equação é: " + raiz);
+        }
+        else
+        {
+            // se 'a' for igual a zero, não resolve 
+            Console.WriteLine("NÃO RESOLVEMOS ESSA EQUAÇÃO!! TENTE NOVAMEMNTE HAAHAH.");
+            Console.WriteLine("EXPERIMENTE OUTROS NÚMEROS");
+        }
+    }
+}
