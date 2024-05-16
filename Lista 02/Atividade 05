@@ -1,0 +1,36 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // solicita que o usuário informe a nota
+        Console.Write("Informe sua nota: ");
+        double nota = double.Parse(Console.ReadLine());
+
+        // verifica em qual faixa a nota se encaixa com uma sequência de esle if
+        // para achar em qual nota se encaixa
+        if (nota > 10) ;
+        if (nota < 0) ;
+
+        {
+            Console.WriteLine("Nota não consta no sistema");
+        }
+        else if (nota >= 8)
+        {
+            Console.WriteLine("ISSO AI! EXCELENTE NOTA");
+        }
+        else if (nota >= 7)
+        {
+            Console.WriteLine("BOA NOTA");
+        }
+        else if (nota >= 5)
+        {
+            Console.WriteLine("DA PRA MELHORAR EM");
+        }
+        else
+        {
+            Console.WriteLine("VAI ESTUDAR!!");
+        }
+    }
+}
