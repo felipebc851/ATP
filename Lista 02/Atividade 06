@@ -1,0 +1,53 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // solicita o valor normal da diária 
+        Console.Write("Informe o valor NORMAL da diária: ");
+        double valorDiariaNormal = double.Parse(Console.ReadLine());
+
+        int totalApartamentos = 75;
+        double taxaOcupacaoNormal = 0.50;
+        double taxaOcupacaoPromocional = 0.80;
+
+        double desconto = 0.25 * valorDiariaNormal;
+        double valorDiariaPromocional = valorDiariaNormal - desconto;
+
+        double valorTotalPromocional = totalApartamentos * taxaOcupacaoPromocional * valorDiariaPromocional;
+
+        double valorTotalNormal = totalApartamentos * taxaOcupacaoNormal * valorDiariaNormal;
+
+        double diferenca = valorTotalPromocional - valorTotalNormal;
+
+        Console.WriteLine("a) O valor da diária promocional é: " + valorDiariaPromocional);
+        Console.WriteLine("b) O valor total arrecadado com 80% de ocupação e diária promocional é: " + valorTotalPromocional);
+        Console.WriteLine("c) O valor total arrecadado com 50% de ocupação e diária normal é: " + valorTotalNormal);
+        Console.WriteLine("d) A diferença entre esses dois valores é: " + diferenca);
+
+        // permite que o usuário recalcule caso queira o valor normal da diária 
+        // utilizando o o if para caso o usúario respondda SIM = true para reallizar o calculo novamente 
+        Console.Write("\nDeseja alterar o valor normal da diária? (S/N): ");
+        string resposta = Console.ReadLine().ToUpper();
+        if (resposta == "SIM")
+        {
+            Console.Write("Informe o novo valor normal da diária: ");
+            valorDiariaNormal = double.Parse(Console.ReadLine());
+
+            desconto = 0.25 * valorDiariaNormal;
+            valorDiariaPromocional = valorDiariaNormal - desconto;
+
+            valorTotalPromocional = totalApartamentos * taxaOcupacaoPromocional * valorDiariaPromocional;
+            valorTotalNormal = totalApartamentos * taxaOcupacaoNormal * valorDiariaNormal;
+            diferenca = valorTotalPromocional - valorTotalNormal;
+
+
+            Console.WriteLine("\nValores atualizados:");
+            Console.WriteLine("a) O valor da diária promocional é: " + valorDiariaPromocional);
+            Console.WriteLine("b) O valor total arrecadado com 80% de ocupação e diária promocional é: " + valorTotalPromocional);
+            Console.WriteLine("c) O valor total arrecadado com 50% de ocupação e diária normal é: " + valorTotalNormal);
+            Console.WriteLine("d) A diferença entre esses dois valores é: " + diferenca);
+        }
+    }
+}
