@@ -1,0 +1,35 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // solicita que informe o valor de x
+        Console.Write("Informe o valor de X: ");
+        double x = double.Parse(Console.ReadLine());
+
+        // declara uma variável para armazenar o valor de y
+        double y;
+
+        // calcula o valor de y com if/else 
+        if (x < 1)
+        {
+            y = 1;
+
+        }
+        else if (x >= 1 && x < 2)
+        {
+            y = 2;
+        }
+        else if (x >= 2 && x < 3)
+        {
+            y = Math.Pow(x, 2); // eleva x ao quadrado (com math.pow para facilitar a leitura)
+        }
+        else
+        {
+            y = Math.Pow(x, 3); // eleva x ao cubo
+        }
+
+        Console.WriteLine("O valor de Y é: " + y);
+    }
+}
